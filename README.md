@@ -22,10 +22,10 @@
 
 <div align="center">
 <p>
-      📧 <sup>1</sup> <a href="mailto:yali3816@uni.sydney.edu.au">yali3816@uni.sydney.edu.au</a> 
-      📧 <sup>2</sup> <a href="mailto:sekim0211@khu.ac.kr">sekim0211@khu.ac.kr</a>,  
+      <sup>1</sup> <a href="mailto:yali3816@uni.sydney.edu.au">yali3816@uni.sydney.edu.au</a> 
+      <sup>2</sup> <a href="mailto:sekim0211@khu.ac.kr">sekim0211@khu.ac.kr</a>,  
       <a href="mailto:sbpark71@khu.ac.kr">sbpark71@khu.ac.kr</a> 
-      📧 <sup>3</sup> <a href="mailto:caren.han@unimelb.edu.au">caren.han@unimelb.edu.au</a>
+      <sup>3</sup> <a href="mailto:caren.han@unimelb.edu.au">caren.han@unimelb.edu.au</a>
 </p>
 </div>
 
