@@ -2,8 +2,6 @@
 
 <div align="center">
 ### Yan Li, So-Eon Kim, Seong-Bae Park, Soyeon Caren Han 
-
-
 ####  Accepted by the 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics
 #### (NAACL 2025)
 </div>
