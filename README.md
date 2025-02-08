@@ -1,9 +1,36 @@
 # MIDAS: Multi-level Intent, Domain, And Slot Knowledge Distillation for Multi-turn NLU
 
 <div align="center">
+    <h2>Authors</h2>
+    <p>
+        <strong>Yan Li</strong><sup>1,3</sup>,  
+        <strong>So-Eon Kim</strong><sup>2</sup>,  
+        <strong>Seong-Bae Park</strong><sup>2</sup>,  
+        <strong>Soyeon Caren Han</strong><sup>1,3</sup> <sup>*</sup>  
+        <br>
+        <em>* Corresponding Author</em>
+    </p>
 
-### Yan Li, So-Eon Kim, Seong-Bae Park, Soyeon Caren Han 
-####  Accepted by the 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics
+    <h3>Affiliations</h3>
+    <p>
+        <sup>1</sup> The University of Sydney, Sydney <br>
+        <sup>2</sup> Kyung Hee University <br>
+        <sup>3</sup> The University of Melbourne
+    </p>
+
+    <h3>Contact</h3>
+    <p>
+        📧 <sup>1</sup> <a href="mailto:yali3816@uni.sydney.edu.au">yali3816@uni.sydney.edu.au</a> <br>
+        📧 <sup>2</sup> <a href="mailto:sekim0211@khu.ac.kr">sekim0211@khu.ac.kr</a>,  
+        <a href="mailto:sbpark71@khu.ac.kr">sbpark71@khu.ac.kr</a> <br>
+        📧 <sup>3</sup> <a href="mailto:caren.han@unimelb.edu.au">caren.han@unimelb.edu.au</a>
+    </p>
+</div>
+
+<div align="center">
+
+#### Accepted by the 2025 Annual Conference of the Nations 
+#### of the Americas Chapter of the Association for Computational Linguistics
 #### (NAACL 2025)
 </div>
 
