@@ -1,12 +1,12 @@
 # MIDAS: Multi-level Intent, Domain, And Slot Knowledge Distillation for Multi-turn NLU
 
-<p style="text-align: center;">
-Yan Li, So-Eon Kim, Seong-Bae Park, Soyeon Caren Han 
-</p>
-<p style="text-align: center;">
-<strong>Accepted by the 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics</strong>  
-<strong>(NAACL 2025)</strong>
-</p>
+<div align="center">
+### Yan Li, So-Eon Kim, Seong-Bae Park, Soyeon Caren Han 
+
+
+####  Accepted by the 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics
+#### (NAACL 2025)
+</div>
 
 
 Implementation of the Multi-turn NLU method MIDAS in [MIDAS: Multi-level Intent, Domain, And Slot Knowledge Distillation for Multi-turn NLU](https://arxiv.org/abs/2408.08144). 
@@ -21,7 +21,7 @@ Implementation of the Multi-turn NLU method MIDAS in [MIDAS: Multi-level Intent,
 
 
 ## 1. Overview 
-Although Large Language Models(LLMs) can generate coherent and contextually relevant text, they often struggle to recognise the intent behind the human user's query. Natural Language Understanding (NLU) models, however, interpret the purpose and key information of user's input to enable responsive interactions. Existing NLU models generally map individual utterances to a dual-level semantic frame, involving sentence-level intent and word-level slot labels. However, real-life conversations primarily consist of multi-turn conversations, involving the interpretation of complex and extended dialogues. Researchers encounter challenges addressing all facets of multi-turn dialogue conversations using a unified single NLU model. This paper introduces a novel approach, MIDAS, leveraging a multi-level intent, domain, and slot knowledge distillation for multi-turn NLU. To achieve this, we construct distinct teachers for varying levels of conversation knowledge, namely, sentence-level intent detection, word-level slot filling, and conversation-level domain classification. These teachers are then fine-tuned to acquire specific knowledge of their designated levels. A multi-teacher loss is proposed to facilitate the combination of these multi-level teachers, guiding a student model in multi-turn dialogue tasks. The experimental results demonstrate the efficacy of our model in improving the overall multi-turn conversation understanding, showcasing the potential for advancements in NLU models through the incorporation of multi-level dialogue knowledge distillation techniques.
+This paper introduces a novel approach, MIDAS, leveraging a multi-level intent, domain, and slot knowledge distillation for multi-turn NLU. To achieve this, we construct distinct teachers for varying levels of conversation knowledge, namely, sentence-level intent detection, word-level slot filling, and conversation-level domain classification. These teachers are then fine-tuned to acquire specific knowledge of their designated levels. A multi-teacher loss is proposed to facilitate the combination of these multi-level teachers, guiding a student model in multi-turn dialogue tasks. The experimental results demonstrate the efficacy of our model in improving the overall multi-turn conversation understanding, showcasing the potential for advancements in NLU models through the incorporation of multi-level dialogue knowledge distillation techniques.
 
 <p align="center">
 <img width="600" src="./figures/overall.jpg">
