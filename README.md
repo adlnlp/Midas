@@ -1,30 +1,34 @@
 # MIDAS: Multi-level Intent, Domain, And Slot Knowledge Distillation for Multi-turn NLU
 
 <div align="center">
-    <h2>Authors</h2>
-    <p>
+      <h2>Authors</h2>
+      <p>
         <strong>Yan Li</strong><sup>1,3</sup>,  
         <strong>So-Eon Kim</strong><sup>2</sup>,  
         <strong>Seong-Bae Park</strong><sup>2</sup>,  
-        <strong>Soyeon Caren Han</strong><sup>1,3</sup> <sup>*</sup>  
+        <strong>Soyeon Caren Han</strong><sup>1,3,*</sup>
         <br>
         <em>* Corresponding Author</em>
-    </p>
+      </p>
+</div>
 
-    <h3>Affiliations</h3>
+<div align="center">
+      <h3>Affiliations</h3>
     <p>
-        <sup>1</sup> The University of Sydney, Sydney <br>
-        <sup>2</sup> Kyung Hee University <br>
+        <sup>1</sup> The University of Sydney, Sydney 
+        <sup>2</sup> Kyung Hee University
         <sup>3</sup> The University of Melbourne
     </p>
+</div>
 
-    <h3>Contact</h3>
-    <p>
-        📧 <sup>1</sup> <a href="mailto:yali3816@uni.sydney.edu.au">yali3816@uni.sydney.edu.au</a> <br>
-        📧 <sup>2</sup> <a href="mailto:sekim0211@khu.ac.kr">sekim0211@khu.ac.kr</a>,  
-        <a href="mailto:sbpark71@khu.ac.kr">sbpark71@khu.ac.kr</a> <br>
-        📧 <sup>3</sup> <a href="mailto:caren.han@unimelb.edu.au">caren.han@unimelb.edu.au</a>
-    </p>
+<div align="center">
+<h3>Contact</h3>
+<p>
+      📧 <sup>1</sup> <a href="mailto:yali3816@uni.sydney.edu.au">yali3816@uni.sydney.edu.au</a> 
+      📧 <sup>2</sup> <a href="mailto:sekim0211@khu.ac.kr">sekim0211@khu.ac.kr</a>,  
+      <a href="mailto:sbpark71@khu.ac.kr">sbpark71@khu.ac.kr</a> 
+      📧 <sup>3</sup> <a href="mailto:caren.han@unimelb.edu.au">caren.han@unimelb.edu.au</a>
+</p>
 </div>
 
 <div align="center">
