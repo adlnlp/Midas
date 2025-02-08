@@ -13,7 +13,6 @@
 </div>
 
 <div align="center">
-      <h3>Affiliations</h3>
     <p>
         <sup>1</sup> The University of Sydney, Sydney 
         <sup>2</sup> Kyung Hee University
@@ -22,7 +21,6 @@
 </div>
 
 <div align="center">
-<h3>Contact</h3>
 <p>
       📧 <sup>1</sup> <a href="mailto:yali3816@uni.sydney.edu.au">yali3816@uni.sydney.edu.au</a> 
       📧 <sup>2</sup> <a href="mailto:sekim0211@khu.ac.kr">sekim0211@khu.ac.kr</a>,  
