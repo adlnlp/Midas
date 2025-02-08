@@ -33,9 +33,9 @@
 
 <div align="center">
 
-#### Accepted by the 2025 Annual Conference of the Nations 
-#### of the Americas Chapter of the Association for Computational Linguistics
-#### (NAACL 2025)
+<strong style="font-size: 18px;">Accepted by the 2025 Annual Conference of the Nations</strong> <br>
+    <strong style="font-size: 18px;">of the Americas Chapter of the Association for Computational Linguistics</strong> <br>
+    <strong style="font-size: 18px;">(NAACL 2025)</strong>
 </div>
 
 
