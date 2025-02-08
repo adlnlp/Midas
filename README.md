@@ -1,5 +1,12 @@
 # MIDAS: Multi-level Intent, Domain, And Slot Knowledge Distillation for Multi-turn NLU
 
+<center>
+Yan Li, So-Eon Kim, Seong-Bae Park, Soyeon Caren Han 
+
+**Accepted by the 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics**  
+**(NAACL 2025)**
+</center>
+
 
 Implementation of the Multi-turn NLU method MIDAS in [MIDAS: Multi-level Intent, Domain, And Slot Knowledge Distillation for Multi-turn NLU](https://arxiv.org/abs/2408.08144). 
 
