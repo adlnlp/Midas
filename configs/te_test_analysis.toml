@@ -1,0 +1,47 @@
+# default parameters
+seed = 10
+name = 'test_analysis'
+retain_ckp = true
+# [PARAMSGRID]
+# MODEL_-attn_mode=[
+# ]
+[EXPERIMENT]
+accelerator = 'gpu'
+batch_size = 32
+save_path = 'results/experiments/test_analysis/'
+
+
+# [TEACHERS]
+# teacher_list = ['t1']
+# # m2m
+# # t1 = {type='RoBERTa', name='roberta-base',head={type='id',nclasses=15},freeze=true} # m2_id_rb_ft.pt m2_id_rb_l6.pt
+# # t1 = {type='RoBERTa', name='roberta-base',head={type='dc',nclasses=2},freeze=true} # m2_dc_rb_ft.pt m2_dc_rb_l6.pt
+# # t1 = {type='RoBERTa', name='roberta-base',head={type='sf',nclasses=21},freeze=true} # m2_sf_rb_ft.pt  m2_sf_rb_l6.pt
+# #multiwoz
+# # t1 = {type='RoBERTa', name='roberta-base',head={type='id',nclasses=11},freeze=true} # mu_id_rb_ft.pt mu_id_rb_l9.pt
+# # t1 = {type='RoBERTa', name='roberta-base',head={type='dc',nclasses=8},freeze=true} # mu_dc_rb_ft.pt mu_dc_rb_l2.pt
+# t1 = {type='RoBERTa', name='roberta-base',head={type='sf',nclasses=30},freeze=true} # mu_sf_rb_ft.pt mu_sf_rb_l6.pt
+
+# [STUDENT]
+# name = 'Transformer_Encoder'
+# dropout = 0.3
+# d_model = 768
+# emb_dim = 768
+# hidden_dim = 2048
+# layers = 6
+# head = 8 
+# pe_type = 'absolute_sin'
+
+[DATA]
+# name = 'MultiWozDCIDSFPOSDataset' 
+# MultiWozDCIDSFPOSDataset M2MDCIDSFPOSDataset
+num_workers = 1
+max_seq_len = 512
+tokenizer_name = 'sentence_piece'
+
+
+
+
+
+
+

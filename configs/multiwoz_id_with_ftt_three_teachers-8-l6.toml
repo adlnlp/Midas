@@ -1,0 +1,61 @@
+# default parameters
+seed = 10
+name = 'intent_detection_with_fine_tuned_three_teachers-8-l6-snn-student'
+retain_ckp = true
+# [PARAMSGRID]
+# EXPERIMENT_-lr=[0.0005,0.00005,0.000005]
+[EXPERIMENT]
+accelerator = 'gpu'
+batch_size = 32
+epochs = 100
+save_path = 'results/experiments/multiwoz/'
+optimizer = 'adamw'
+optimizer_params = {}
+lrscheduler = 'constantwarmup'
+lrscheduler_params={}
+lr = 0.00005
+warmup = 0.1
+# steps = 3000
+stop_strategy = 'early_stop'
+stop_patience = 10
+monitor = 'val_loss'
+mode = 'min'
+temperature = 20
+loss_version = "rel_kd_sim_sce"
+
+[TEACHERS]
+# three teachers version
+teacher_list = ['t1','t2','t3']
+# t1 = {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11,pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},mymask=false,load_ft='results/teachers/meta-llama_Llama-2-7b-hf_unmask_dc_no_adjust_labels_checkpoint_epoch_3.pt'}
+# t2 = {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11,pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},mymask=false,load_ft='results/teachers/meta-llama_Llama-2-7b-hf_unmask_sf_no_adjust_labels_checkpoint_epoch_3.pt'}
+# t3 = {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11,pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},mymask=false,load_ft='results/teachers/meta-llama_Llama-2-7b-hf_unmask_id_no_adjust_labels_checkpoint_epoch_3.pt'}
+
+t1 = {type='BERT', name='bert-base-uncased',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/bert-base-uncased_dc_no_adjust_labels_checkpoint_epoch_3.pt'}
+t2 = {type='BERT', name='bert-base-uncased',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/bert-base-uncased_sf_no_adjust_labels_checkpoint_epoch_3.pt'}
+t3 = {type='BERT', name='bert-base-uncased',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/bert-base-uncased_id_no_adjust_labels_checkpoint_epoch_3.pt'}
+
+# [STUDENT]
+# name = 'Student_BERT'
+# bert_name = 'google-bert/bert-base-uncased'
+
+[STUDENT]
+name = 'SimpleNN'
+output_dim = 1024
+layers = 2
+dropout = 0.1
+emb_dim = 768
+pe_type = 'none'
+
+
+[DATA]
+name = 'MultiWozDCIDSFPOSDataset'
+num_workers = 4
+max_seq_len = 512
+tokenizer_name = 'sentence_piece'
+
+
+
+
+
+
+

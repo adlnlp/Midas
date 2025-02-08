@@ -1,0 +1,11 @@
+transformers==4.39.3
+lightning-fabric
+loguru
+torchmetrics
+dadaptation
+seqeval
+adapter-transformers
+peft
+nltk
+toml
+pandas

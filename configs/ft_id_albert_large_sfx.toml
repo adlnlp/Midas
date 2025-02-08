@@ -1,0 +1,41 @@
+# default parameters
+seed = 10
+name = 'albert_large_intent_detection_ft_sfx'
+retain_ckp = true
+# [PARAMSGRID]
+# MODEL_-attn_mode=[
+# ]
+[EXPERIMENT]
+accelerator = 'gpu'
+batch_size = 32
+epochs = 3
+save_path = 'results/experiments/ft/'
+optimizer = 'adamw'
+optimizer_params = {}
+lrscheduler = 'constantwarmup'
+lrscheduler_params={}
+lr = 0.00005
+warmup = 0.1
+# steps = 3000
+stop_strategy = 'epoch_stop'
+stop_patience = 10
+monitor = 'val_loss'
+mode = 'min'
+temperature = 20
+str_name = 'id_sfx_no_adjust_labels'
+
+[TEACHERS]
+teacher_list = ['t1']
+t1 = {type='ALBERT',name='albert-large-v1',head={type='id',nclasses=21},freeze=false}
+
+[DATA]
+names = ['SFXDCIDSFPOSDataset']
+num_workers = 4
+max_seq_len = 512
+
+
+
+
+
+
+

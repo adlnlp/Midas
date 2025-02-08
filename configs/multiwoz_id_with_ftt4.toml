@@ -1,0 +1,74 @@
+# default parameters
+seed = 10
+name = 'intent_detection_with_fine_tuned_multi_single_teachers4'
+retain_ckp = true
+[PARAMSGRID]
+TEACHERS_-t1=[
+    # {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11, pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},load_ft='results/teachers/meta-llama_Llama-2-7b-hf_sf_no_adjust_labels_checkpoint_epoch_3.pt'},
+    # {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11, pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},load_ft='results/teachers/meta-llama_Llama-2-7b-hf_pos_no_adjust_labels_checkpoint_epoch_3.pt'},
+    # {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11, pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},load_ft='results/teachers/meta-llama_Llama-2-7b-hf_dc_no_adjust_labels_checkpoint_epoch_3.pt'},
+    # {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11, pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},load_ft='results/teachers/meta-llama_Llama-2-7b-hf_id_no_adjust_labels_checkpoint_epoch_3.pt'},
+
+    # {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11, pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},mymask=false,load_ft='results/teachers/meta-llama_Llama-2-7b-hf_unmask_sf_no_adjust_labels_checkpoint_epoch_3.pt'},
+    # {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11, pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},mymask=false,load_ft='results/teachers/meta-llama_Llama-2-7b-hf_unmask_pos_no_adjust_labels_checkpoint_epoch_3.pt'},
+    # {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11, pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},mymask=false,load_ft='results/teachers/meta-llama_Llama-2-7b-hf_unmask_dc_no_adjust_labels_checkpoint_epoch_3.pt'},
+    # {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='id',nclasses=11, pooling='last'},freeze=true, loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1},mymask=false,load_ft='results/teachers/meta-llama_Llama-2-7b-hf_unmask_id_no_adjust_labels_checkpoint_epoch_3.pt'},
+
+    # {type='RoBERTa',name='roberta-base',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/roberta-base_sf_no_adjust_labels_checkpoint_epoch_3.pt'},
+    # {type='RoBERTa',name='roberta-base',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/roberta-base_pos_no_adjust_labels_checkpoint_epoch_3.pt'},
+    # {type='RoBERTa',name='roberta-base',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/roberta-base_dc_no_adjust_labels_checkpoint_epoch_3.pt'},
+    # {type='RoBERTa',name='roberta-base',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/roberta-base_id_no_adjust_labels_checkpoint_epoch_3.pt'},
+
+    {type='BERT', name='bert-base-uncased',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/bert-base-uncased_sf_no_adjust_labels_checkpoint_epoch_3.pt'},
+    {type='BERT', name='bert-base-uncased',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/bert-base-uncased_pos_no_adjust_labels_checkpoint_epoch_3.pt'},
+    {type='BERT', name='bert-base-uncased',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/bert-base-uncased_dc_no_adjust_labels_checkpoint_epoch_3.pt'},
+    {type='BERT', name='bert-base-uncased',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/bert-base-uncased_id_no_adjust_labels_checkpoint_epoch_3.pt'},
+    
+]
+[EXPERIMENT]
+task = 'id'
+accelerator = 'gpu'
+batch_size = 32
+epochs = 100
+save_path = 'results/experiments/multiwoz/'
+optimizer = 'adamw'
+optimizer_params = {}
+lrscheduler = 'constantwarmup'
+lrscheduler_params={}
+lr = 0.00005
+warmup = 0.1
+# steps = 3000
+stop_strategy = 'early_stop'
+stop_patience = 10
+monitor = 'val_loss'
+mode = 'min'
+temperature = 20
+loss_version = "student_only_without_detach_mean_score"
+
+[TEACHERS]
+teacher_list = ['t1']
+t1 = {type='BERT', name='bert-base-uncased',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/bert-base-uncased_dc_no_adjust_labels_checkpoint_epoch_3.pt'}
+# t2 = {type='RoBERTa', name='roberta-base',head={type='id',nclasses=11},freeze=true,load_ft='results/teachers/roberta-base_sf_no_adjust_labels_checkpoint_epoch_3.pt'}
+
+[STUDENT]
+name = 'Transformer_Encoder'
+dropout = 0.3
+d_model = 768
+emb_dim = 768
+hidden_dim = 2048
+layers = 6
+head = 8 
+pe_type = 'absolute_sin'
+
+[DATA]
+name = 'MultiWozDCIDSFPOSDataset'
+num_workers = 4
+max_seq_len = 512
+tokenizer_name = 'sentence_piece'
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+# default parameters
+seed = 10
+name = 'llama2_pos_ft'
+retain_ckp = true
+# [PARAMSGRID]
+# MODEL_-attn_mode=[
+# ]
+[EXPERIMENT]
+accelerator = 'gpu'
+batch_size = 32
+epochs = 3
+save_path = 'results/experiments/ft/'
+optimizer = 'adamw'
+optimizer_params = {}
+# lr and warmup come from https://colab.research.google.com/drive/1PEQyJO1-f6j0S_XJ8DV50NkpzasXkrzd?usp=sharing#scrollTo=ib_We3NLtj2E
+lrscheduler = 'constantwarmup'
+lrscheduler_params={}
+lr = 2e-4
+warmup = 0.03
+# steps = 3000
+stop_strategy = 'epoch_stop'
+stop_patience = 10
+monitor = 'val_loss'
+mode = 'min'
+temperature = 20
+str_name = 'pos_no_adjust_labels'
+
+[TEACHERS]
+teacher_list = ['t1']
+# the loracfg comes from https://colab.research.google.com/drive/1PEQyJO1-f6j0S_XJ8DV50NkpzasXkrzd?usp=sharing#scrollTo=ib_We3NLtj2E
+t1 = {type='Llama', name='meta-llama/Llama-2-7b-hf',head={type='pos',nclasses=43},freeze=false,loracfg={'lora_r'=64,'lora_alpha'=16,'lora_dropout'=0.1}}
+
+[DATA]
+names = ['E2ESFPOSDataset','M2MDCIDSFPOSDataset','MultiWozDCIDSFPOSDataset','SFXDCIDSFPOSDataset']
+num_workers = 4
+max_seq_len = 512
+
+
+
+
+
+
+

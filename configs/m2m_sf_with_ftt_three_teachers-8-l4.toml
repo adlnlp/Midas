@@ -1,0 +1,55 @@
+# default parameters
+seed = 10
+name = 'slot_filling_wftt_three_teachers-8-l4'
+retain_ckp = true
+
+[EXPERIMENT]
+accelerator = 'gpu'
+batch_size = 32
+epochs = 100
+save_path = 'results/experiments/m2m/'
+optimizer = 'adamw'
+optimizer_params = {}
+lrscheduler = 'constantwarmup'
+lrscheduler_params={}
+lr = 0.00005
+warmup = 0.1
+# steps = 3000
+stop_strategy = 'early_stop'
+stop_patience = 10
+monitor = 'val_loss'
+mode = 'min'
+temperature = 20
+loss_version = "kd_sim_sce_tpr"
+
+[TEACHERS]
+teacher_list = ['t1','t2','t3']
+t1 = {type='BERT', name='bert-base-uncased',head={type='sf',nclasses=21},freeze=true,load_ft='results/teachers/bert-base-uncased_dc_no_adjust_labels_checkpoint_epoch_3.pt'}
+t2 = {type='BERT', name='bert-base-uncased',head={type='sf',nclasses=21},freeze=true,load_ft='results/teachers/bert-base-uncased_sf_no_adjust_labels_checkpoint_epoch_3.pt'}
+t3 = {type='BERT', name='bert-base-uncased',head={type='sf',nclasses=21},freeze=true,load_ft='results/teachers/bert-base-uncased_id_no_adjust_labels_checkpoint_epoch_3.pt'}
+# t1 = {type='RoBERTa', name='roberta-base',head={type='sf',nclasses=21},freeze=true,load_ft='results/teachers/roberta-base_dc_no_adjust_labels_checkpoint_epoch_3.pt'}
+# t2 = {type='RoBERTa', name='roberta-base',head={type='sf',nclasses=21},freeze=true,load_ft='results/teachers/roberta-base_sf_no_adjust_labels_checkpoint_epoch_3.pt'}
+# t3 = {type='RoBERTa', name='roberta-base',head={type='sf',nclasses=21},freeze=true,load_ft='results/teachers/roberta-base_id_no_adjust_labels_checkpoint_epoch_3.pt'}
+
+[STUDENT]
+name = 'Transformer_Encoder'
+dropout = 0.3
+d_model = 768
+emb_dim = 768
+hidden_dim = 2048
+layers = 6
+head = 8 
+pe_type = 'absolute_sin'
+
+[DATA]
+name = 'M2MDCIDSFPOSDataset'
+num_workers = 4
+max_seq_len = 512
+tokenizer_name = 'sentence_piece'
+
+
+
+
+
+
+

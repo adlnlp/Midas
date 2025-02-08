@@ -1,0 +1,53 @@
+# default parameters
+seed = 10
+name = 'slot_filling'
+retain_ckp = true
+# [PARAMSGRID]
+# MODEL_-attn_mode=[
+# ]
+[EXPERIMENT]
+accelerator = 'gpu'
+batch_size = 32
+epochs = 100
+save_path = 'results/experiments/sfx/'
+optimizer = 'adamw'
+optimizer_params = {}
+lrscheduler = 'constantwarmup'
+lrscheduler_params={}
+lr = 0.00005
+warmup = 0.1
+# steps = 3000
+stop_strategy = 'early_stop'
+stop_patience = 10
+monitor = 'val_loss'
+mode = 'min'
+temperature = 20
+
+[TEACHERS]
+teacher_list = ['t1','t2']
+t1 = {type='BERT', name='bert-base-uncased',head={type='sf',nclasses=16},freeze=false}
+t2 = {type='RoBERTa', name='roberta-base',head={type='sf',nclasses=16},freeze=false}
+
+[STUDENT]
+name = 'Transformer_Encoder'
+dropout = 0.3
+d_model = 768
+emb_dim = 768
+hidden_dim = 2048
+layers = 6
+head = 8 
+pe_type = 'absolute_sin'
+
+[DATA]
+name = 'SFXDCIDSFPOSDataset'
+nclasses = 2
+num_workers = 4
+max_seq_len = 512
+tokenizer_name = 'sentence_piece'
+
+
+
+
+
+
+

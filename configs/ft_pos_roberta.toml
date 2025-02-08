@@ -1,0 +1,41 @@
+# default parameters
+seed = 10
+name = 'roberta_pos_ft'
+retain_ckp = true
+# [PARAMSGRID]
+# MODEL_-attn_mode=[
+# ]
+[EXPERIMENT]
+accelerator = 'gpu'
+batch_size = 32
+epochs = 3
+save_path = 'results/experiments/ft/'
+optimizer = 'adamw'
+optimizer_params = {}
+lrscheduler = 'constantwarmup'
+lrscheduler_params={}
+lr = 0.00005
+warmup = 0.1
+# steps = 3000
+stop_strategy = 'epoch_stop'
+stop_patience = 10
+monitor = 'val_loss'
+mode = 'min'
+temperature = 20
+str_name = 'pos_no_adjust_labels'
+
+[TEACHERS]
+teacher_list = ['t1']
+t1 = {type='RoBERTa', name='roberta-base',head={type='pos',nclasses=43},freeze=false}
+
+[DATA]
+names = ['E2ESFPOSDataset','M2MDCIDSFPOSDataset','MultiWozDCIDSFPOSDataset','SFXDCIDSFPOSDataset']
+num_workers = 4
+max_seq_len = 512
+
+
+
+
+
+
+
