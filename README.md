@@ -65,7 +65,7 @@ This paper introduces a novel approach, MIDAS, leveraging a multi-level intent, 
 
 - Download the whole datasets from the following links and unzip them to cover the data folder.
 
-  - [Data](https://drive.google.com/file/d/1jLtt4ni3aXOXGZgK7VfsCum0geqKYxHj/view?usp=sharing
+  - [Data](https://drive.google.com/file/d/1jLtt4ni3aXOXGZgK7VfsCum0geqKYxHj/view?usp=sharing)
 
 ### 2.2 Fine-tune the teachers
 
