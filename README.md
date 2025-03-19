@@ -63,6 +63,10 @@ This paper introduces a novel approach, MIDAS, leveraging a multi-level intent, 
 
 - Download the source code.
 
+- Download the whole datasets from the following links and unzip them to cover the data folder.
+
+  - [Data](https://drive.google.com/file/d/1jLtt4ni3aXOXGZgK7VfsCum0geqKYxHj/view?usp=sharing
+
 ### 2.2 Fine-tune the teachers
 
 We provide code to fine-tune different teachers, including Seq2Seq, Albert, BERT, RoBERTa GEMMA and Llama. Users can useing the following command to fine tune the teachers for different tasks:
