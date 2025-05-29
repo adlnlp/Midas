@@ -114,7 +114,7 @@ If you find our method useful, please kindly cite our paper.
 
 
 ## 4. Contributing
-We welcome contributions from the research community to improve the effeicency of SelfExtend. If you have any idea or would like to report a bug, please open an issue or submit a pull request.
+We welcome contributions from the research community to improve the effeicency of MIDAS. If you have any idea or would like to report a bug, please open an issue or submit a pull request.
 
 ## 5. License
 The code is released under the MIT License.
