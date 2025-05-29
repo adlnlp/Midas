@@ -41,7 +41,7 @@ Implementation of the Multi-turn NLU method MIDAS in [MIDAS: Multi-level Intent,
 
 
 ## Updates
-- [08/02/2024]:🎉 Open source!
+- [08/02/2025]:🎉 Open source!
 
 
 ## Requirements:
@@ -108,7 +108,7 @@ If you find our method useful, please kindly cite our paper.
       eprint={2408.08144},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
-      note={Accept to NAACL 2025}
+      note={Accepted to NAACL 2025}
 }
 ```
 
